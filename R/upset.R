@@ -119,7 +119,7 @@ upset <- function(data, nsets = 5, nintersects = 40, sets = NULL, keep.order = F
                   decreasing = c(T, F), show.numbers = "yes", number.angles = 0, group.by = "degree",cutoff = NULL,
                   queries = NULL, query.legend = "none", shade.color = "gray88", shade.alpha = 0.25, matrix.dot.alpha =0.5,
                   empty.intersections = NULL, color.pal = 1, boxplot.summary = NULL, attribute.plots = NULL, scale.intersections = "identity",
-                  scale.sets = "identity", text.scale = 1, set_size.angles = 0 ){
+                  scale.sets = "identity", text.scale = 1, set_size.angles = 0, vjust = -1, hjust = 0.5 ){
   
   startend <-FindStartEnd(data)
   first.col <- startend[1]
@@ -251,7 +251,7 @@ upset <- function(data, nsets = 5, nintersects = 40, sets = NULL, keep.order = F
   ShadingData <- MakeShading(Matrix_layout, shade.color)
   }
   Main_bar <- suppressMessages(Make_main_bar(All_Freqs, Bar_Q, show.numbers, mb.ratio, customQBar, number.angles, EBar_data, mainbar.y.label,
-                            mainbar.y.max, scale.intersections, text.scale, attribute.plots))
+                            mainbar.y.max, scale.intersections, text.scale, attribute.plots, vjust, hjust))
   Matrix <- Make_matrix_plot(Matrix_layout, Set_sizes, All_Freqs, point.size, line.size,
                              text.scale, labels, ShadingData, shade.alpha)
   Sizes <- Make_size_plot(Set_sizes, sets.bar.color, mb.ratio, sets.x.label, scale.sets, text.scale, set_size.angles)
