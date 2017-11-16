@@ -133,8 +133,8 @@ Make_main_bar <- function(Main_bar_data, Q, show_num, ratios, customQ, number_an
     hj <- 0.5
     vj <- -1
     if(number_angles == 90){
-      hj <- 3
-      vj <- 0.5
+      hj <- -3
+      vj <- 2
       }
     Main_bar_plot <- (Main_bar_plot + geom_text(aes_string(label = "freq"), size = 2.2*intersection_size_number_scale, vjust = vj, hjust = hj, 
                                                 angle = number_angles, colour = Main_bar_data$color))
